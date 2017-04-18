@@ -25,7 +25,7 @@ public class BusManagment{
 		return chk;
 	}
 	
-	public int retBal (String id) {
+	public static int retBal (String id) {
 		Connection con=Jdbc.getCon();
 		PreparedStatement ps;
 		int ret=0;
@@ -83,5 +83,45 @@ public class BusManagment{
 			System.out.println("SQL exception error while updating Transactions\n");
 		}
 		return rem;
+	}
+	public static void setID(String str) {
+		Connection con=Jdbc.getCon();
+		PreparedStatement ps;
+		
+		try {
+			ps=con.prepareStatement("insert into temp values(?)");
+			ps.setString(1,str);
+			int status=ps.executeUpdate();
+		}
+		catch(SQLException E) {
+			System.out.println("SQL Exception While adding ID temprrly");
+		}	
+	}
+	public static String getID() {
+		
+		Connection con=Jdbc.getCon();
+		PreparedStatement ps;
+		String ret="";
+		
+		try {
+			ps=con.prepareStatement("select * from temp");
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()) {
+				ret=rs.getString(1);
+			}
+			
+		}
+		catch(SQLException E) {
+			System.out.println("SQL Exception While adding ID temprrly");
+		}	
+		try {
+			ps=con.prepareStatement("delete from temp");
+			int status=ps.executeUpdate();
+		}
+		catch(SQLException E) {
+			System.out.println("SQL Exception While adding ID temprrly");
+		}	
+		return ret;
+		
 	}
 }

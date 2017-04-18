@@ -20,7 +20,7 @@
   		out.println("Current Balance=" + bal);
  %>
 							
-				<form name=F1 onSubmit="return dil(this)" action="messloginprocess1.jsp" >
+				<form name=F1 onSubmit="return dil(this)" action="messloginprocess2.jsp" >
 				  <table cellspacing="5" cellpadding="3">	
 					<TR>
 	<TD> Food Type   :</TD> <TD> <SELECT NAME="food"> 
