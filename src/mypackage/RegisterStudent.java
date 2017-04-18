@@ -8,28 +8,30 @@ public class RegisterStudent {
 	
 		Connection con=Jdbc.getCon();
 		PreparedStatement ps;
-		String x="select CollegeCard.StudentInfo from dual";
+		String x="select count(*) from StudentInfo";
 		int p=Jdbc.getPrimaryKey(x);
 		String s="USR",t=String.valueOf(p+1);
 		s=s+t;
 		try {
 			ps = con.prepareStatement("Insert into StudentInfo values(?,?,?,?,?,?,?)");
 			int a=0;
+			int ph=(int) phone;
 			if(gen.equals("male"))
 				a=1;
 		 	ps.setString(1,s);
 		    ps.setString(2,name);
-			ps.setLong(3,phone);
+			ps.setInt(3,ph);
 			ps.setString(4,email);
 			ps.setString(5,add);
 			ps.setInt(6,a);
 			ps.setString(7,maxq);
 			
 			status=ps.executeUpdate();
+			System.out.println("Added Succesfully");
 			
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			System.out.println("SQL Exception While Adding student");
 		}
 		
 		/*Adding password and studentID to StudentLogin table*/

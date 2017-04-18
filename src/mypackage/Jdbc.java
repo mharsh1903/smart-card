@@ -14,8 +14,8 @@ class Jdbc {
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");  
 			con=DriverManager.getConnection(  
-			"jdbc:mysql://localhost:3306/CollegeCard","root","oopproject"); 
-			//?autoReconnect=true&useSSL=false
+			"jdbc:mysql://localhost:3306/CollegeCard","root","744574"); 
+			//?autReconnect=true&useSSL=false
 			//here sonoo is database name, root is username and password  
 			//Statement stmt=con.createStatement();  
 			//ResultSet rs=stmt.executeQuery("select * from emp");  
@@ -29,7 +29,7 @@ class Jdbc {
 			System.out.println("Hello\n");
 		}
 	}
-	//public static void main(String args[]){  
+//	public static void main(String args[]){  
 //		try{  
 //			Class.forName("com.mysql.jdbc.Driver");  
 //			con=DriverManager.getConnection(  
@@ -43,8 +43,7 @@ class Jdbc {
 //			//System.out.println("harsh");
 //			con.close();  
 //		}catch(Exception e){ ;}  
-//		Jdbc p=new Jdbc();
-//		p.check();
+//		
 //	}
 	public static Connection getCon() {
 		return con;
