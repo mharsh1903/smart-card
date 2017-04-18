@@ -66,10 +66,10 @@ var sds = document.getElementById("dum");
     </div>
 </div>
 
-					  <%  out.print("<font color=black>");
+					  <%  out.print("<font color=black>WELCOME TO BUS LOGIN");
 	%>
     
-    	<form name=F1 onSubmit="return dil(this)" action="addofficeprocess.jsp" >
+    	<form name=F1 onSubmit="return dil(this)" action="busloginprocess.jsp" >
 				   <table cellspacing="10" cellpadding="8">	
 				  <%if(request.getAttribute("aa")!=null)
 			{
@@ -86,19 +86,14 @@ var sds = document.getElementById("dum");
     
 			
 	
-	    			<tr><td>NAME:</td><td> <input type="text" name="name"/></td></tr>
-	    			<tr><td>DESIGNATION:</td><td> <input type="text" name="desig"/></td></tr>
+	    			<tr><td>USER ID:</td><td> <input type="text" name="username"/></td></tr>
 					
-					<!--tr><td>M:</td><td> <input type="password" name="password"/></td></tr>-->
+					<tr><td>PASSWORD:</td><td> <input type="password" name="password"/></td></tr>
 					
-					
-					
-					<tr><td></td><td><input type="submit" value="SUBMIT"/>
+					<tr><td></td><td><input type="submit" value="LOGIN"/>
 					
                    
                    <INPUT TYPE=RESET VALUE="CANCEL"></td></tr>
-                   </table>
-                   </form>
                    
   </body>
   </html>
